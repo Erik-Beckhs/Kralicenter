@@ -1,0 +1,39 @@
+.booked-clock-150x70 {
+	width: 279px !important;
+height: 103px !important;
+overflow: hidden !important;
+padding: 20px 0 0 !important;
+margin: 6px auto !important;
+text-align: center !important;
+position: relative !important;
+font: normal 11px/11px Arial, Helvetica, sans-serif !important;
+	color:#fff;
+	}
+	.booked-clock-150x70 * {
+		margin:2px !important;
+		padding:2px !important;
+		}
+
+.booked-clock-150x70-time {
+	font-size: 51px !important;
+line-height: 37px !important;
+letter-spacing: 1px;
+	}
+	.booked-clock-150x70-time sup {
+		font-size:11px !important;
+		line-height:11px !important;
+		padding:0 0 0 4px !important;
+		position:absolute !important;
+		top:9px !important;
+		right:10px !important;
+		}
+
+.booked-clock-150x70-city {
+	font-weight:bold !important;
+	text-decoration:none !important;
+	font-size:15px !important;
+	}
+
+.booked-clock-150x70-date {
+	margin:3px 0 0 !important;
+	}

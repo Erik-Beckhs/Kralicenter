@@ -1,0 +1,384 @@
+<div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Traspasos entre Sucursales</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  	<div class="row">
+	                  	<div class="col-md-12">
+		                    <!--Contenido-->
+
+		                    <div class="col-sm-14"  id="VerFormTraspaso">
+                                <form role="form" name="frmTraspaso" id="frmTraspaso" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                                            <label>Los campos con (*) son obligatorios</label><br>
+                                            <label>Estos datos serán utilizados para el comprobante del traspaso.</label>
+                                        </div>
+
+                                                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<!--                                                <div class="col-lg-8 left">
+-->
+                                                    <label >Sucursal Origen (*):</label>
+                                                    <div class="form-group has-success">
+
+                                                        <div class="input-group">
+                                                            <input id="txtIdUsuario" type="hidden" value="<?php echo $_SESSION["idusuario"] ?>" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
+                                                            <input id="txtIdSucursalOrigen" type="hidden"  value="<?php echo $_SESSION["idsucursal"] ?>" maxlength="50" class="form-control" name="txtIdSucursalOrigen" placeholder="" autofocus="" />
+                                                            <input id="txtSucursalOrigen" type="text" value="<?php echo $_SESSION["sucursal"] ?>" class="form-control" name="txtSucursalOrigen" required="" placeholder="Seleccione una Sucursal" autofocus="" disabled/>
+
+                                                            <span class="input-group-btn" >
+                                                                  <button type="button" class="btn btn-success" id="btnBuscarSucursalOrigen" ><i class='fa fa-search'></i>
+                                                                                Buscar
+                                                                  </button>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+<!--                                                <div class="col-lg-8 left">
+-->
+                                                    <label >Sucursal Destino (*):</label>
+                                                    <div class="form-group has-success">
+
+                                                        <div class="input-group">
+                                                            <input id="txtIdSucursalDestino" type="hidden" maxlength="50" class="form-control" name="txtIdSucursalDestino" placeholder="" autofocus="" />
+                                                            <input id="txtSucursalDestino" type="text" class="form-control" name="txtSucursalDestino" required="" placeholder="Seleccione una Sucursal" autofocus="" disabled/>
+                                                            <span class="input-group-btn" >
+                                                                  <button type="button" class="btn btn-success" id="btnBuscarSucursalDestino" ><i class='fa fa-search'></i>
+                                                                                Buscar
+                                                                  </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                    </div>
+
+                                        <div class="row">
+                                            <style media="screen">
+                                              #btnBuscarArticuloTraspaso{width: 100%;padding: 11px;display: none;}
+                                              #btnBuscarArticuloTraspaso:hover {  background-color: #bf4637 !important;}
+                                              #btnFinalizarTraspaso{width: 100%;padding: 11px;margin: 0px 5px 17px 0px;display: none;}
+                                            </style>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnBuscarArticuloTraspaso" class="btn btn-info"><i class='fa fa-search'></i>
+                                                         Buscar Artículos </button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
+                                                <div class="form-group">
+                                                    <button type="button" id="btnFinalizarTraspaso" class="btn btn-success"><i disabled class='fa fa-search'></i>
+                                                         Finalizar Traspaso</button>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main" id="VerDetalleArticulo">
+                                                <div class="table-responsive" >
+                                                        <table class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" border="1" class="display" id="tblDetalleArticulo">
+                                                            <thead>
+                                                                <tr>
+                                    <th>#</th>
+                                    <th>Código</th>
+                                    <th>Artículo</th>
+                                    <th>P. Venta</th>
+                                    <th>Cantidad Disponible</th>
+                                    <th>Cantidad a Traspasar</th>
+                                    <th>Eliminar</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="VerArticulos">
+
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left left">
+                                                    <h5></h5>
+                                                    <a href="Traspaso.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                                                    <hr>
+                                                    <span class="lead text-primary"></span>
+                                            </div>
+                                        </div>
+
+
+                                </form>
+                        </div>
+                        <button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file"></i> Nuevo</button>
+                        <br><br>
+                        <div id="VerListadoTraspaso" class="table-responsive">
+
+                      		<table id="tblTraspaso" class="table table-striped table-bordered table-condensed table-hover" cellspacing="0" cellpadding="0" width="100%">
+                              <thead>
+                                  <tr>
+                                   	  <th>#</th>
+                                      <th>Sucursal Origen</th>
+                                      <th>Sucursal Destino</th>
+                                      <th>Creado por</th>
+                                      <th>Fecha</th>
+                                      <th>Motivo</th>
+                                      <th>Opciones</th>
+                                  </tr>
+                              </thead>
+
+                              <tfoot>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>Sucursal Origen</th>
+                                      <th>Sucursal Destino</th>
+                                      <th>Creado por</th>
+                                      <th>Fecha</th>
+                                      <th>Motivo</th>
+                                      <th>Opciones</th>
+                                  </tr>
+                              </tfoot>
+
+                              <tbody id="traspaso">
+
+                              </tbody>
+                          </table>
+                        </div>
+		                    <!--Fin-Contenido-->
+                  		</div>
+                  	</div><!-- /.row -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+
+
+
+
+
+
+<div id="modalListadoSucursalDestino" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Listado de Sucursales Disponibles para Traslado</h4>
+      </div>
+      <div class="modal-body">
+      <div class="table-responsive">
+        <table id="tblSucursalesDestino" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Razón Social</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>E-Mail</th>
+                            <th>Logo</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Razón Social</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>E-Mail</th>
+                            <th>Logo</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody id="SucursalesDestino">
+
+                    </tbody>
+                </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+        <button type="button" id="btnAgregarSucursalDestino" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modalListadoSucursalOrigen" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Listado de Sucursales Disponibles para Traslado</h4>
+      </div>
+      <div class="modal-body">
+      <div class="table-responsive">
+        <table id="tblSucursalesOrigen" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Razón Social</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>E-Mail</th>
+                            <th>Logo</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Razón Social</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>E-Mail</th>
+                            <th>Logo</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody id="SucursalesOrigen">
+
+                    </tbody>
+                </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+        <button type="button" id="btnAgregarSucursalOrigen" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modalListadoArticuloTraspaso" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Listado de Artículos Disponibles para Traspaso</h4>
+      </div>
+      <div class="modal-body">
+            <div class="table-responsive">
+                <table id="tblArticulosTraspaso" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                      <style media="screen">
+                        .rojo, .negro , .amarillo, .verde {display: inline-block;
+                        min-width: 10px;
+                        padding: 3px 7px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 1;
+                        color: #fff;
+                        text-align: center;
+                        white-space: nowrap;
+                        vertical-align: middle;
+
+                        border-radius: 10px;}
+                        .verde{background-color: #2d9c69;}
+                        .rojo{background-color: #e33f2a;}
+                        .amarillo{background-color: #f39c12;}
+
+                        .negro{background-color: #232323e6;}
+                      </style>
+                        <tr>
+                            <th>Agregar</th>
+                            <th>Nombre</th>
+                            <th>Codigo-Tienda</th>
+                            <th>Codigo-Fábrica</th>
+                            <th>Codigo-Universal</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                            <th>Procedencia</th>
+                            <th>Ubicación</th>
+                            <th>Observación</th>
+                            <th>Unidad</th>
+                            <th>Stock Actual</th>
+                            <th>P. Venta</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Agregar</th>
+                            <th>Nombre</th>
+                            <th>Codigo-Tienda</th>
+                            <th>Codigo-Fábrica</th>
+                            <th>Codigo-Universal</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                            <th>Procedencia</th>
+                            <th>Ubicación</th>
+                            <th>Observación</th>
+                            <th>Unidad</th>
+                            <th>Stock Actual</th>
+                            <th>P. Venta</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody id="ArticuloTraspasoDetalle" style="text-align:center;">
+
+                    </tbody>
+                </table>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="modalVerFinalizarTraspaso" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Finalizar Traspaso</h4>
+                </div>
+                <div class="modal-body">
+
+                <form  role="form" name="frmFinTraspaso" id="frmFinTraspaso" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Motivo del Traspaso (*):</label>
+                                <input  required="" id="txtMotivo" type="text" maxlength="255" name="txtMotivo" class="form-control" placeholder="Motivo del Traspaso" required="" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Fecha de Traspaso (*):</label>
+                                <input id="txtFechaTraspaso" type="date" name="txtFechaTraspaso" class="form-control" autofocus="" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+                        <button type="button" id="btnRegistrarTraspaso" class="btn btn-warning" ><i class="fa fa-floppy-o"></i> Registrar Traspaso</button>
+                    </div> <!-- Fin modal footer -->
+                </form>
+
+
+            </div>  <!-- fin modal content -->
+        </div><!-- fin modal dialog -->
+    </div> <!-- fin modal  -->
+
+
+
+<script type="text/javascript">
+
+    $('#almacen').addClass("treeview active");
+    $('#liTraspaso').addClass("active");
+
+</script>

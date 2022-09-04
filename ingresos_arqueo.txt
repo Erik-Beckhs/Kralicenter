@@ -1,0 +1,2 @@
+tabla movimiento_caja
+select monto from movimiento_caja where idsucursal= 5 and idusuario = 34 and tipo_operacion='APERTURA' and fecha=curdate()

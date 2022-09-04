@@ -1,0 +1,185 @@
+
+<div class="panel panel-default">
+        <div class="panel-heading">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Almacen Tienda</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+        </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  	<div class="row">
+	                  	<div class="col-md-12">
+		                    <!--Contenido-->
+
+		                    <div class="col-sm-14"  id="VerForm">
+
+        <form role="form" name="frmArticulos" id="afrmArticulos" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <label> En esta seccion podra editar  las caracteristicas principales de los Items </label>
+					<br>
+					<br>
+					<br>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 left">
+                    <label>Stock Disponible:</label>
+                    <div class="form-group  has-success">
+                        <input id="txtstock" type="text" maxlength="50" class="form-control" name="txtstock" required="" placeholder="" autofocus="" />
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 left" style="display:none">
+                    <label>idarticulo:</label>
+                    <div class="form-group  has-success">
+                        <input id="txtIdArticulo" type="text" maxlength="1000" class="form-control" name="txtIdArticulo" required="" placeholder="" autofocus="" />
+
+                    </div>
+                </div>
+
+			<script language="javascript" type="text/javascript">
+
+    function Solo_Numerico(variable){
+        Numer=parseInt(variable);
+        if (isNaN(Numer)){
+            return "";
+        }
+        return Numer;
+    }
+    function ValNumero(Control){
+        Control.value=Solo_Numerico(Control.value);
+    }
+</script>
+
+
+
+
+
+                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-8 left">
+                    <label>Precio de Venta:</label>
+                    <div class="form-group  has-success">
+                        <input onkeypress="return valida(event)" id="txtprecio" type="text" class="form-control" name="txtprecio"  autofocus="" placeholder="Solo se aceptan números" />
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
+                    <h5></h5>
+                    <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
+                    <a href="Almacen.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                    <hr>
+                    <span class="lead text-primary"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+       <!--
+<button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file"></i> Nuevo</button> Contenido-->
+
+
+		                    <br><br>
+		                    <div id="VerListadoC" class="table-responsive">
+
+
+            		<table id="1tblArticulosC" class="table table-striped table-bordered table-condensed table-hover" cellspacing="0" cellpadding="0" width="100%">
+                    <thead>
+                      <style media="screen">
+                        .rojo, .negro , .amarillo, .verde, .rojoClaro, .amarilloClaro, .verdeClaro, .azulClaro, .naranjaClaro, .lilaClaro {display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  border-radius: 10px;}
+  .verde{background-color: #2d9c69;}
+  .rojo{background-color: #e33f2a;}
+  .amarillo{background-color: #fdfedf;}
+  .negro{background-color: #232323e6;}
+
+  .rojoClaro{background-color:#8e171a;}
+  .amarilloClaro{background-color:#ece710;}
+  .verdeClaro{background-color:#008480;}
+  .azulClaro{background-color:#1e55a5;}
+  .lilaClaro{background-color:#6b4d9f;}
+  .naranjaClaro{background-color:#f0ad4e;}
+
+                      </style>
+                        <tr>
+                        	<th>#</th>
+                          <th>imagen</th>
+							 <th>Nombre</th>
+               <th>Sucursal</th>
+
+               <th>Código</th>
+
+
+               <th>Marca</th>
+
+							   <th>Stock</th>
+
+                            <th>Ubicación</th>
+
+							 <th>Observación</th>
+
+							  <th>Unidad</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                    <th>#</th>
+                    <th>Imagen</th>
+							 <th>Nombre</th>
+               <th>Sucursal</th>
+
+               <th>Código</th>
+
+
+               <th>Marca</th>
+
+							   <th>Stock</th>
+
+                            <th>Ubicación</th>
+
+							 <th>Observación</th>
+
+							  <th>Unidad</th>
+
+                        </tr>
+                    </tfoot>
+
+                    <tbody id="articuloC">
+
+                    </tbody>
+                </table>
+</div>
+		                    <!--Fin-Contenido-->
+                  		</div>
+                  	</div><!-- /.row -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+
+<script type="text/javascript">
+
+    $('#alm').addClass("treeview active");
+    $('#med').addClass("active");
+
+</script>

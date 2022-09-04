@@ -1,0 +1,1006 @@
+  <script type="text/javascript" src="public/scripts/Pedido.js"></script>
+
+<!-- ----------------------   Venta O generar Venta--------------------------------------->
+<div class="panel panel-default">
+        <div class="panel-heading">
+                <div class="box-header with-border">
+                  <h3 class="box-title" id="lblTitlePed" >Venta</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+            </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  	<div class="row">
+	                  	<div class="col-md-12">
+		                    <!--Contenido-->
+		                    <div class="col-sm-14"  id="VerForm">
+        <form  name="frmPedidos" id="frmPedidos" enctype="multipart/form-data" >
+            <div class="row">
+                <div class="col-sm-12 col-sm-offset-0 col-lg-12 col-lg-offset-0 main">
+                    <div class="row">
+                        <div class="col-lg-2 left">
+                            <label id="inputCliente"></label>
+                            <div class="form-group has-success">
+                                <input id="txtIsProforma"   type="hidden" maxlength="1" class="form-control" name="txtIsProforma" required="" placeholder="" autofocus="" />
+                                <input id="txtIdUsuario"  type="hidden"  value="<?php echo $_SESSION["idusuario"] ?>" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
+                                <input id="txtIdSucursal"  type="hidden" value="<?php echo $_SESSION["idsucursal"] ?>" maxlength="50" class="form-control" name="txtIdSucursal" required="" placeholder="" autofocus="" />
+                              <!--  <input id="txtIdCliente" class="form-control" name="txtIdCliente" required placeholder="" autofocus="" value="<?php echo $_SESSION["idpersona"] ?>" />
+                              -->
+                            </div>
+                        </div>
+                        <div style="display:none" class="col-lg-4 left">
+                            <label id="inputImpuesto">Impuesto</label>
+                            <div class="form-group">
+                                <div class="input-group has-success">
+                                    <input  id="txtImpuestoPed" type="text" class="form-control" style="text-align:center;" name="txtImpuestoPed" disabled/>
+                                    <div class="input-group-addon" id="Porcentaje">%</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-4 left">
+                            <label id="inputTipoPed">Tipo Pedido:</label>
+                            <div class="form-group  has-success">
+
+                                <select id="cboTipoPedido" name="cboTipoPedido" class="form-control" required >
+                                    <option value="Pedido">Pedido</option>
+                                    <option value="Proforma">Proforma</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 left">
+                            <label id="inputNumero">Número:</label>
+                            <div class="form-group has-success">
+                                    <input id="txtNumeroPed" type="text" class="form-control" style="text-align:center;" name="txtNumeroPed" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <style media="screen">
+                      #btnBuscarDetIng{width: 100%;padding: 11px;}
+                      #btnBuscarDetIng:hover {	background-color: #bf4637 !important;}
+#btnBuscarCliente{width: 100%;padding: 11px;margin: 0px 5px 17px 0px;}
+                    </style>
+                    <div class="row">
+                        <div class="col-lg-12 left">
+                            <div class="form-group">
+                                <button type="button" id="btnBuscarDetIng" class="btn btn-info"><i class='fa fa-search'></i>
+                                     Buscar Articulos </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12 left">
+
+                          <!--    <input id="txtIdCliente" class="form-control" name="txtIdCliente" required placeholder="" autofocus="" value="" />
+                          --> <div class="input-group">
+
+                                  <span class="input-group-btn" >
+                                        <button type="button" class="btn btn-success" onclick="total()" id="btnBuscarCliente"><i class='fa fa-search'></i>
+                                                      Pagar
+                                        </button>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+
+                    </div>
+                <div >
+            </div>
+            </div>
+            <div class="col-sm-9 col-lg-12 main" id="VerDetallePedido">
+                <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" border="1" class="display" id="tblDetallePedido">
+                            <thead>
+                                <tr>
+                                    <th>Articulo</th>
+                                    <th>Cod. Universal</th>
+                                    <th></th>
+                                    <th>Stock</th>
+                                    <th>P. Venta</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-lg-8 col-lg-offset-2 main" id="VerTotalesDetPedido">
+                    <div class="row">
+                        <div class="col-lg-4 left">
+                            <div class="input-group has-error">
+                                <div id="SubTotal" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtSubTotalPed" name="txtSubTotalPed" placeholder="Sub Total" disabled>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 left  has-error">
+                            <div class="input-group">
+                                <div id="IGV" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtIgvPed" name="txtIgvPed" placeholder="I.G.V" disabled>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 left has-error">
+                            <div class="input-group">
+                                <div id="Total" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtTotalPed" name="txtTotalPed" placeholder="Total" disabled>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-lg-12 left" id="VerRegPedido">
+                    <p></p>
+                        <button class="btn btn-success" id="btnRegPedido" type="submit"><i class="fa fa-floppy-o"></i> Registrar Pedido</button>
+
+                        <a href="Pedido.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                        <hr>
+                        <span class="lead text-primary"></span>
+                    </div>
+
+                <br><br>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+<div class="row" style="padding: 10px 20px !important ;">
+    <button class="btn btn-primary" id="btnNuevoVent"><i class="fa fa-file"></i> Nueva Venta</button>
+    <button class="btn btn-primary" id="btnNuevoProforma"><i class="fa fa-file"></i> Nueva Venta desde Proforma</button>
+    <br id="OcultaBR1">
+    <br id="OcultaBR2">
+    <div id="VerListado" class="table-responsive">
+        <table id="tblPedidos" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>T. Pedido</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>T. Pedido</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+
+                    <th>Opciones</th>
+                </tr>
+            </tfoot>
+
+            <tbody id="Pedido">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-sm-14"  id="VerFormVentaPed">
+<form role="form" name="frmVentas" id="frmVentas" >
+            <div class="row">
+                <h3 class="col-lg-12" id="txtVenta" ></h3>
+                <div class="col-lg-4 left">
+                    <label for="inputMarca">Tipo de Venta</label>
+                    <div class="form-group  has-success">
+                        <input id="txtIdVenta" type="hidden" maxlength="50" class="form-control" name="txtIdVenta" required="" placeholder="" autofocus="" />
+                        <input id="txtIdPedido" type="hidden" class="form-control" name="txtIdPedido" required="" placeholder="" autofocus="" />
+                        <select id="cboTipoVenta" name="cboTipoVenta" class="form-control">
+                            <option value="Contado">Contado</option>
+                            <option value="credito">Crédito</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="col-lg-3 left">
+                    <label for="inputInscripcion">Impuesto</label>
+                    <div class="form-group  has-success">
+
+                        <input id="txtImpuesto" type="text" class="form-control" name="txtImpuesto" placeholder="" readonly="readonly"/>
+                    </div>
+                </div>
+                <div class="col-lg-3 left">
+                    <label for="inputInscripcion">Cliente</label>
+                    <div class="form-group  has-success">
+
+                        <input id="txtClienteVent" type="text" class="form-control" name="txtClienteVent" placeholder="" readonly="readonly"/>
+                    </div>
+                </div>
+                <div class="col-lg-3 left">
+                    <label id="inputTotal">Total</label>
+                    <div class="form-group  has-success">
+
+                        <input id="txtTotalVent" type="text" class="form-control" name="txtTotalVent" required="" placeholder="" readonly="readonly"/>
+                    </div>
+                </div>
+                <div class="col-lg-12 left">
+
+                    <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
+                    <a href="Pedido.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                    <a id="btnEnviarCorreo" class="btn btn-default" ><i class="fa fa-envelope"></i> Enviar por correo</a>
+                    <hr>
+                    <span class="lead text-primary"></span>
+                </div>
+
+                <div class="col-sm-9 col-lg-12 main" id="VerVentaDetallePedido">
+                <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" border="1" class="display" id="tblDetallePedidoVer">
+                            <thead>
+                                <tr>
+                                    <th>Articulo</th>
+                                    <th>Codigo</th>
+                                    <th>Serie</th>
+                                    <th>Stock</th>
+                                    <th>P. Venta</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                </div>
+
+                <div class="col-sm-9 col-sm-offset-3 col-lg-8 col-lg-offset-2 main">
+                    <div class="row">
+                        <div class="col-lg-4 left">
+                            <div class="input-group has-error">
+                                <div id="SubTotal_Ver" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtSubTotalPedVer" name="txtSubTotalPedVer" placeholder="Sub Total" disabled>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 left  has-error">
+                            <div class="input-group">
+                                <div id="IGV_Ver" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtIgvPedVer" name="txtIgvPedVer" placeholder="I.G.V" disabled>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 left has-error">
+                            <div class="input-group">
+                                <div id="Total_Ver" class="input-group-addon"></div>
+                                <input type="text" class="form-control" id="txtTotalPedVer" name="txtTotalPedVer" placeholder="Total" disabled>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </form>
+</div>
+		                    <!--Fin-Contenido-->
+                  		</div>
+                  	</div><!-- /.row -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+
+
+
+
+
+
+
+
+
+              <!----------------------------------------------------- Facturacion--------------------------------------------- -->
+   <div id="modalListadoClienteP" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+
+
+
+
+   <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Facturacion</h4>
+      </div>
+      <div class="modal-body">
+   <div class="row">
+   <div class=" col-lg-4">
+
+
+      <div class="table-responsive"  style="height:400px !important;"    >
+        <table id="tblClientesP"   class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Tipo</th>
+                            <th>Cliente</th>
+                            <th>N° Doc.</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Tipo</th>
+                            <th>Cliente</th>
+                            <th>N° Doc.</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody id="ClienteP">
+
+                    </tbody>
+                </table>
+        </div>
+      </div><!-- Fin  columana 4 -->
+      <!--   ---------   Crear Cliente-------------------- -->
+
+      <form  role="form" name="frmClienteP" id="frmClienteP" enctype="multipart/form-data">
+
+
+      <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
+          <div class="form-group has-success">
+              <label>Nombre (*):</label>
+              <input autofocus id="txtNombre" type="text" value= "SIN NOMBRE" maxlength="100" name="txtNombre" required="" class="form-control" placeholder="Nombre / Razón Social" autofocus="" />
+          </div>
+      </div>
+
+
+
+
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group has-success">
+              <label>Documento (*):</label>
+              <input   onkeypress="return valida(event)" id="txtNum_Documento" value= "0" type="text" maxlength="20" name="txtNum_Documento" required="" class="form-control" placeholder="Número de documento" autofocus="" />
+          </div>
+      </div>
+
+
+
+
+
+
+      <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group has-success">
+              <label>Tipo Documento (*):</label>
+              <select  type="hidden" required="" id="cboTipo_Documento" name="cboTipo_Documento" class="form-control">
+
+              </select>
+          </div>
+      </div>
+
+
+      <div class="col-lg-3">
+          <label>Tipo Pago</label>
+          <div class="form-group  has-success">
+
+              <select id="tipo_pago" name="tipo_pago" class="form-control" >
+                <option value = "deposito" selected >Depósito</option>
+                <option value = "tarjeta" selected >Tarjeta</option>
+                <option selected="true" value = "efectivo">Efectivo</option>
+              </select>
+          </div>
+      </div>
+
+      <div class="col-lg-3">
+          <label>Tipo Venta</label>
+          <div class="form-group  has-success">
+
+              <select id="tipo_venta" name="tipo_venta" class="form-control" >
+                <option value = "credito" selected >credito</option>
+                <option selected="true" value = "contado">Contado</option>
+              </select>
+          </div>
+      </div>
+
+      <div class="col-lg-2">
+                       <div class="form-group has-success">
+                           <label>Descuento(%):</label>
+                           <!------------poner funcion que al presionar se reste del descuento -->
+                           <input  onkeypress="return valida(event)" id="descuento" name="descuento" type="text" onchange="hola()" value="0.0" class="form-control">
+                       </div>
+
+                   </div>
+
+
+
+
+
+              <div class="col-lg-3">
+                               <div class="form-group has-success">
+                                   <label>Recibi:</label>
+                                   <input  onkeypress="return valida(event)" id="recibi" type="text"  value="0" onchange="hola()" style ="height:45px; color:red;" class="form-control">
+                               </div>
+
+                           </div>
+
+
+
+
+
+                           <div class="col-lg-2">
+                               <div class="form-group has-success">
+                                             <label>Total:</label>
+                                             <input id="totalPagar"  style =" height:45px; color:black; background:yellow;" readonly type="text" maxlength="20"  required="" class="form-control" placeholder="Total" autofocus="" />
+                                         </div>
+
+                                         </div>
+
+
+
+
+              <div class="col-lg-3">
+                  <div class="form-group has-success">
+                                <label>Cambio:</label>
+                                <input id="cambio"  style ="color:white; height:45px; background:#5cb85c;" readonly type="text" maxlength="20"  required="" class="form-control" placeholder="cambio cliente" autofocus="" />
+                            </div>
+
+                            </div>
+
+
+
+                            <!-- ------------------------------------------------Tipo de comprobante------------------------ -->
+                                          <div class="col-lg-3">
+                                              <label for="inputMarca"></label>
+                                              <div class="form-group  has-success">
+
+                                                  <select style="visibility:hidden" id="cboTipoComprobanteVta" name="cboTipoComprobanteVta" class="form-control" >
+
+                                                  </select>
+                                              </div>
+                                          </div>
+                            <!-- ------------------------------------------------Nº de comprobante------------------------ -->
+                                          <div class="col-lg-2">
+                                              <label for="inputInscripcion"></label>
+                                              <div class="form-group  has-success">
+
+                                                  <input id="txtNumeroVent" readonly  type="hidden" class="form-control" name="txtNumeroVent" required="" placeholder=""/>
+                                              </div>
+                                          </div>
+
+
+
+                            <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
+                                <div class="form-group has-success">
+                                    <label></label>
+                                    <!--  ***************************************    VALOR DEL IDCLIENTE (14) SIN NOMBRE ************************************     -->
+                                    <input autofocus id="txtClienteFarm" type="hidden" maxlength="100" name="txtNombre" required="" value="14" class="form-control" placeholder="Nombre / Razón Social" autofocus="" />
+                                </div>
+                            </div>
+
+    <div class="row">
+        <div class="col-lg-12 left">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+
+                </div>
+                <div  style="display:none;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                      <!--  ***************************************    VALOR DEL IDCLIENTE (14) SIN NOMBRE ************************************     -->
+                        <input id="txtClienteFarm"  type="hidden" maxlength="50" class="form-control" name="txtClienteFarm" placeholder="" autofocus="" value="14"/>
+                        <label>Tipo Persona (*):</label>
+                        <select  id="cboTipo_Persona"required="" class="form-control" name="cboTipo_Persona">
+                          <option>Cliente</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-lg-12 left">
+            <div class="row">
+
+
+            </div>
+
+        </div>
+        <div class="col-lg-12 left">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="display: none;">
+                    <div class="form-group has-success">
+                        <label>Departamento:</label>
+                        <input type="hidden"id="txtDireccion_Departamento" type="text" maxlength="45" name="txtDireccion_Departamento" placeholder="Departamento" class="form-control" autofocus="" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="display: none;">
+                    <div class="form-group has-success">
+                        <label>Provincia:</label>
+                        <input  type="hidden" id="txtDireccion_Provincia" type="text" maxlength="45" name="txtDireccion_Provincia" class="form-control" placeholder="Provincia" autofocus="" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="display: none;">
+                    <div class="form-group has-success">
+                        <label>Distrito:</label>
+                        <input type="hidden" id="txtDireccion_Distrito" type="text" maxlength="45" name="txtDireccion_Distrito"  class="form-control" placeholder="Distrito" autofocus="" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-12 left" style="display: none;">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                        <label>Calle:</label>
+                        <input  type="hidden" id="txtDireccion_Calle" type="text" maxlength="70" name="txtDireccion_Calle" placeholder="Calle" class="form-control" autofocus="" />
+                    </div>
+                </div>
+                <div  style="display: none;" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                        <label>Teléfono:</label>
+                        <input type="hidden"  id="txtTelefono" type="text" maxlength="20" name="txtTelefono" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                    </div>
+                </div>
+                <div style="display: none;"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                        <label>Email:</label>
+                        <input  type="hidden" id="txtEmail" type="text" maxlength="50" name="txtEmail"  class="form-control" placeholder="Ingrese el email" autofocus="" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-12 left" style="display: none;">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                        <label>Cuenta Bancaria:</label>
+                        <input type="hidden" id="txtNumero_Cuenta" type="text" maxlength="32" name="txtNumero_Cuenta" class="form-control" autofocus="" />
+                    </div>
+                </div>
+
+
+
+
+
+                <div style="display: none;"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group has-success">
+                        <label>Estado (*):</label>
+                        <select type="hidden" required="" class="form-control" name="txtEstado" id="txtEstado">
+                          <option>A</option>
+                          <option>C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+
+
+    </div>
+</form>
+
+
+
+
+
+              </div><!-- fin col 4  -->
+
+
+
+
+                                          <div class="row">
+                                                              <div class="col-lg-2 ">
+                                                    <button  style="padding: 0px 0px;"  id="dies"  onclick="funcionDies()" ><img src="./img/10.jpg" alt="..." class="img-thumbnail"></button>
+                                                       </div>
+
+
+
+                                                          <div class="col-lg-2 ">
+                                                    <button  style="padding: 0px 0px;" onclick="funcionVen()" ><img src="./img/20.jpg" alt="..." class="img-thumbnail"></button>
+                                                       </div>
+
+
+                                                       <div class="col-lg-2 ">
+                                                      <button  style="padding: 0px 0px;" onclick="funcionCinc()"><img src="./img/50.jpg" alt="..." class="img-thumbnail"></button>
+                                                       </div>
+
+                                                          <div class="col-lg-2 ">
+                                                    <button style="padding: 0px 0px;"  onclick="funcionCien()"><img src="./img/100.jpg" alt="..." class="img-thumbnail"></button>
+                                                       </div>
+
+
+                                                        <div class="col-lg-2 ">
+                                                    <button style="padding: 0px 0px;"  onclick="funcionDos()"><img src="./img/200.jpg" alt="..." class="img-thumbnail"></button>
+                                                       </div>
+
+
+
+              </div>
+
+    </div> <!--  row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+  <button type="button" id="btnGenerarVenta" class="btn btn-warning" ><i class="fa fa-floppy-o"></i> Generar Venta</button>
+
+      <!-- <button type="submit" class="btn btn-primary" onclick="GuardarVenta();">Registrar  </button>
+
+         <button type="button" id="btnAgregarCliente" class="btn btn-primary">
+   <i class="fa fa-plus"></i> Agregar</button>-->
+
+   </div> <!-- Fin modal footer -->
+
+
+
+
+   </div>  <!-- fin modal content -->
+   </div><!-- fin modal dialog -->
+
+   </div> <!-- fin modal  -->
+
+</div>
+
+
+<!----------------------------------------------------------------------------------------------- CALCULO DEL DESCUENTO ------------------------------------------------------------->
+
+
+<script>
+function hola() {
+    var recibi=document.getElementById("recibi").value
+    var descuento=document.getElementById("descuento").value
+    var total=(document.getElementById("txtTotalPed").value )-((descuento*document.getElementById("txtTotalPed").value)/100)
+    $("#cambio").val(recibi-total);
+}
+function total()
+{
+  var total=document.getElementById("txtTotalPed").value
+  $("#totalPagar").val(total);
+}
+</script>
+
+
+<script>
+function funcionDies() {
+
+$("#recibi").val(10);
+hola();
+
+
+}
+
+function funcionVen() {
+
+$("#recibi").val(20);
+hola();
+
+
+}
+
+
+
+
+function funcionCinc() {
+
+$("#recibi").val(50);
+hola();
+
+
+}
+
+
+
+function funcionCien() {
+
+$("#recibi").val(100);
+hola();
+
+
+}
+
+
+
+function funcionDos() {
+
+$("#recibi").val(200);
+hola();
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<div id="modalListadoArticulosPed" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" style =" width:1200px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Listado de Articulos Ingresados</h4>
+      </div>
+      <div class="modal-body">
+      <div class="table-responsive">
+        <table id="tblArticulosPed" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                    <style media="screen">
+                      .rojo, .negro , .amarillo, .verde {display: inline-block;
+min-width: 10px;
+padding: 3px 7px;
+font-size: 12px;
+font-weight: 700;
+line-height: 1;
+color: #fff;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+
+border-radius: 10px;}
+.verde{background-color: #2d9c69;}
+.rojo{background-color: #e33f2a;}
+.amarillo{background-color: #f39c12;}
+
+.negro{background-color: #232323e6;}
+
+                    </style>
+                        <tr>
+                            <th style="width: 1000px;">Agregar</th>
+                            <th>Nombre</th>
+
+                            <th>Codigo-Tienda</th>
+                            <th>Codigo-Fábrica</th>
+                            <th>Codigo-Universal</th>
+                            <th>Categoría</th>
+							<th>Marca</th>
+              <th>prosedencia</th>
+							<th>Ubicación</th>
+
+							<th>Unidad</th>
+
+                            <th>Stock Actual</th>
+                            <th>P. Venta</th>
+
+                        </tr>
+                                          </thead>
+                    <tfoot>
+                                              <tr>
+                            <th style="width: 1000px;">Agregar</th>
+                            <th>Nombre</th>
+
+                            <th>Codigo-Tienda</th>
+                            <th>Codigo-Fábrica</th>
+                            <th>Codigo-Universal</th>
+                            <th>Categoría</th>
+							<th>Marca</th>
+              <th>prosedencia</th>
+							<th>Ubicación</th>
+
+						  <th>Unidad</th>
+						                <th>Stock Actual</th>
+                            <th>P. Venta</th>
+                                                 </tr>
+                    </tfoot>
+
+                    <tbody id="ArticuloPed" style="text-align:center;">
+
+                    </tbody>
+                </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+        <!--<button type="button" id="btnAgregarArtPed" class="btn btn-primary">
+<i class="fa fa-plus"></i> Agregar</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modalcredito" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" >×</button>
+            <h3 class="myModalLabel">Registrar credito</h3>
+        </div>
+        <div class="modal-body">
+            <form role="form" name="frmcreditos" id="frmcreditos" >
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4 left">
+                                <div class="form-group" >
+                                    <label for="inputNombre">Fecha de Pago</label>
+                                    <input id="txtIdcredito"  type="hidden" class="form-control" name="txtIdcredito" required="" placeholder="" />
+                                    <input id="txtIdVentaCred"  type="hidden" class="form-control" name="txtIdVentaCred" required="" placeholder="" />
+                                    <input id="cboFechaPago"  type="date" class="form-control" name="cboFechaPago" value="<?php date_default_timezone_set('America/La_Paz'); echo date("Y-m-d"); ?>" required="" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4 left">
+                               <div class="form-group" >
+                                    <label for="inputApellidos">Total de Pago</label>
+                                    <input id="txtTotalPago"  type="text" class="form-control" name="txtTotalPago" required="" placeholder="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-default" >Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="modalListadoProformas" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <h4 class="modal-title">Listado de Proformas</h4>
+
+      </div>
+
+      <div class="modal-body">
+
+      <div class="table-responsive">
+
+        <table id="tblProformas" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Seleccione</th>
+
+                            <th>#</th>
+
+                            <th>Cliente</th>
+
+                            <th>Fecha</th>
+
+                            <th>Total</th>
+
+                            <th>Tipo Venta</th>
+
+                            <th>Tipo Pago</th>
+
+                            <th>Descuento</th>
+
+                            <th>Tipo Documento</th>
+
+                            <th>Num Documento</th>
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tfoot>
+
+                        <tr>
+
+                            <th>Seleccione</th>
+
+                            <th>#</th>
+
+                            <th>Cliente</th>
+
+                            <th>Fecha</th>
+
+                            <th>Total</th>
+
+                            <th>Tipo Venta</th>
+
+                            <th>Tipo Pago</th>
+
+                            <th>Descuento</th>
+
+                            <th>Tipo Documento</th>
+
+                            <th>Num Documento</th>
+                        </tr>
+
+                    </tfoot>
+
+
+
+                    <tbody id="Proformas">
+
+
+
+                    </tbody>
+
+                </table>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+
+        <button type="button" id="btnAgregarProforma" class="btn btn-primary">
+
+<i class="fa fa-plus"></i> Agregar</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $('#liVentas').addClass("treeview active");
+    $('#liPedidos').addClass("active");
+
+</script>

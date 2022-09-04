@@ -1,0 +1,167 @@
+[27-Dec-2019 15:27:19 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/sistemaiec/public_html/petshop/fpdf17/fpdf.php on line 23
+[27-Dec-2019 15:30:12 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/sistemaiec/public_html/petshop/fpdf17/fpdf.php on line 23
+[27-Dec-2019 15:46:01 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/sistemaiec/public_html/petshop/fpdf17/fpdf.php on line 23
+[27-Dec-2019 15:51:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/sistemaiec/public_html/petshop/fpdf17/fpdf.php on line 23
+[27-Dec-2019 15:52:20 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/sistemaiec/public_html/petshop/fpdf17/fpdf.php on line 23
+[11-Feb-2020 23:54:13 UTC] PHP Warning:  Division by zero in /home/sistemaiec/public_html/petshop/Reportes/Ingreso.php on line 259
+[11-Feb-2020 23:54:13 UTC] PHP Warning:  Division by zero in /home/sistemaiec/public_html/petshop/Reportes/Ingreso.php on line 259
+[11-Feb-2020 23:54:13 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file' in /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php:271
+Stack trace:
+#0 /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php(1060): FPDF->Error('Some data has a...')
+#1 /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/sistemaiec/public_html/petshop/Reportes/exIngreso.php(260): FPDF->Output('Reporte de Ingr...', 'I')
+#3 {main}
+  thrown in /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php on line 271
+[05-Aug-2020 02:57:03 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/sistemaiec/public_html/petshop/Reportes/Ingreso.php on line 723
+[23-Oct-2020 19:54:50 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/sistemaiec/public_html/petshop/Reportes/exCierredeCaja.php:2) in /home/sistemaiec/public_html/petshop/Reportes/exCierredeCaja.php on line 11
+[23-Oct-2020 19:54:50 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file (output started at /home/sistemaiec/public_html/petshop/Reportes/exCierredeCaja.php:2)' in /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php:271
+Stack trace:
+#0 /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php(1049): FPDF->Error('Some data has a...')
+#1 /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/sistemaiec/public_html/petshop/Reportes/exCierredeCaja.php(355): FPDF->Output('I', 'Reporte Cierre ...')
+#3 {main}
+  thrown in /home/sistemaiec/public_html/petshop/fpdf182/fpdf.php on line 271
+[09-Aug-2022 02:40:44 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 02:40:44 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[09-Aug-2022 02:42:50 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 02:42:50 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[09-Aug-2022 02:49:09 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 02:49:09 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[09-Aug-2022 03:02:47 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 03:02:47 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[09-Aug-2022 03:04:05 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 03:04:05 UTC] PHP Notice:  Undefined property: stdClass::$marca in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 198
+[09-Aug-2022 03:04:05 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 200
+[09-Aug-2022 03:04:05 UTC] PHP Notice:  Undefined property: stdClass::$color in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 202
+[09-Aug-2022 03:04:05 UTC] PHP Notice:  Undefined property: stdClass::$P_compra in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 206
+[09-Aug-2022 03:04:05 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:04:05 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:04:05 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:04:05 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:04:05 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[09-Aug-2022 03:05:31 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[09-Aug-2022 03:05:31 UTC] PHP Notice:  Undefined property: stdClass::$marca in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 198
+[09-Aug-2022 03:05:31 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 200
+[09-Aug-2022 03:05:31 UTC] PHP Notice:  Undefined property: stdClass::$color in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 202
+[09-Aug-2022 03:05:31 UTC] PHP Notice:  Undefined property: stdClass::$P_compra in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 206
+[09-Aug-2022 03:05:31 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:05:31 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:05:31 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:05:31 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[09-Aug-2022 03:05:31 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[15-Aug-2022 03:41:56 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[15-Aug-2022 03:41:56 UTC] PHP Notice:  Undefined property: stdClass::$marca in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 198
+[15-Aug-2022 03:41:56 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 200
+[15-Aug-2022 03:41:56 UTC] PHP Notice:  Undefined property: stdClass::$color in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 202
+[15-Aug-2022 03:41:56 UTC] PHP Notice:  Undefined property: stdClass::$P_compra in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 206
+[15-Aug-2022 03:41:56 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[15-Aug-2022 03:41:56 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[15-Aug-2022 03:41:56 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[15-Aug-2022 03:41:56 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[15-Aug-2022 03:41:56 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[15-Aug-2022 03:44:49 UTC] PHP Parse error:  syntax error, unexpected '*' in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTicket.php on line 137
+[15-Aug-2022 03:52:38 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTicket.php on line 136
+[15-Aug-2022 03:53:39 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTicket.php on line 136
+[15-Aug-2022 03:53:40 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTicket.php on line 136
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 64
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'razon_social' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 80
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'num_documento' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 82
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'direccion' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 84
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'telefono' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 86
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'email' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:11:25 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:11:25 UTC] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: / in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php:271
+Stack trace:
+#0 /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php(302): FPDF->Image('../', 5, 3, 25, 25, '/')
+#2 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php(88): PDF_Invoice->addSociete(NULL, '\nDireccion: \nTe...', '../', '')
+#3 {main}
+  thrown in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php on line 271
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 64
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'razon_social' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 80
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'num_documento' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 82
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'direccion' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 84
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'telefono' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 86
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'email' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:13:57 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:13:57 UTC] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: / in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php:271
+Stack trace:
+#0 /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php(302): FPDF->Image('../', 5, 3, 25, 25, '/')
+#2 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php(88): PDF_Invoice->addSociete(NULL, '\nDireccion: \nTe...', '../', '')
+#3 {main}
+  thrown in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php on line 271
+[17-Aug-2022 02:24:03 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[17-Aug-2022 02:24:03 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[17-Aug-2022 02:24:03 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[17-Aug-2022 02:34:45 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[17-Aug-2022 02:34:45 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[17-Aug-2022 02:34:45 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 64
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'razon_social' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 80
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'num_documento' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 82
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'direccion' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 84
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'telefono' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 86
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'email' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:37:33 UTC] PHP Notice:  Trying to get property 'logo' of non-object in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 88
+[17-Aug-2022 02:37:33 UTC] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: / in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php:271
+Stack trace:
+#0 /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php(302): FPDF->Image('../', 5, 3, 25, 25, '/')
+#2 /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php(88): PDF_Invoice->addSociete(NULL, '\nDireccion: \nTe...', '../', '')
+#3 {main}
+  thrown in /home/hgfjlbpukm58/public_html/kralicenter/fpdf182/fpdf.php on line 271
+[17-Aug-2022 02:38:40 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[17-Aug-2022 02:38:40 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[17-Aug-2022 02:38:40 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[17-Aug-2022 21:19:37 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Traspaso.php on line 384
+[17-Aug-2022 21:19:37 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTraspaso.php on line 85
+[17-Aug-2022 21:19:37 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Traspaso.php on line 130
+[17-Aug-2022 21:19:37 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTraspaso.php on line 85
+[17-Aug-2022 21:19:37 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Traspaso.php on line 130
+[17-Aug-2022 21:19:37 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTraspaso.php on line 85
+[17-Aug-2022 21:19:37 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Traspaso.php on line 130
+[17-Aug-2022 21:19:37 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exTraspaso.php on line 85
+[17-Aug-2022 21:19:37 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Traspaso.php on line 130
+[19-Aug-2022 14:33:09 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 723
+[19-Aug-2022 14:33:09 UTC] PHP Notice:  Undefined property: stdClass::$marca in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 198
+[19-Aug-2022 14:33:09 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 200
+[19-Aug-2022 14:33:09 UTC] PHP Notice:  Undefined property: stdClass::$color in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 202
+[19-Aug-2022 14:33:09 UTC] PHP Notice:  Undefined property: stdClass::$P_compra in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 206
+[19-Aug-2022 14:33:09 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[19-Aug-2022 14:33:09 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[19-Aug-2022 14:33:09 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[19-Aug-2022 14:33:09 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Ingreso.php on line 259
+[19-Aug-2022 14:33:09 UTC] PHP Notice:  Undefined property: stdClass::$total_descuento in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exIngreso.php on line 256
+[20-Aug-2022 18:39:40 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[20-Aug-2022 18:39:40 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[20-Aug-2022 18:39:40 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[20-Aug-2022 18:41:24 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[20-Aug-2022 18:41:24 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[20-Aug-2022 18:41:24 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:01:13 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:01:13 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[23-Aug-2022 23:03:24 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[23-Aug-2022 23:03:24 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[23-Aug-2022 23:03:24 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[31-Aug-2022 21:53:23 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[31-Aug-2022 21:53:23 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[31-Aug-2022 21:53:23 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278
+[31-Aug-2022 21:53:23 UTC] PHP Deprecated:  The each() function is deprecated. This message will be suppressed on further calls in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 726
+[31-Aug-2022 21:53:23 UTC] PHP Notice:  Undefined property: stdClass::$numero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/exPedido.php on line 174
+[31-Aug-2022 21:53:23 UTC] PHP Warning:  Division by zero in /home/hgfjlbpukm58/public_html/kralicenter/Reportes/Pedido.php on line 278

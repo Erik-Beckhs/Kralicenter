@@ -1,0 +1,64 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="box-header with-border">
+          <h3 class="box-title" id="lblTitle" >APERTURA DE CAJA</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+    </div>
+
+    <!-- /.box-header -->
+
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-12">
+                <!--Contenido-->
+                <div class="col-sm-14"  id="VerFormAperturaCaja">
+
+                    <form  name="frmDocAperturaCaja" id="frmDocAperturaCaja" enctype="multipart/form-data" >
+                        <div class="row">
+                            <div class="col-sm-9 col-sm-offset-0 col-lg-8 col-lg-offset-0 main">
+                                <div class="row">
+                                    <div class="col-lg-6 left">
+                                        <input id="txtIdSucursal" type="hidden" name="txtIdSucursal" value="<?php echo $_SESSION['idsucursal'] ?>"  />
+                                        <input id="txtIdUsuario" type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idusuario'] ?>" />
+                                        <input id="tipomovimiento" type="hidden" value="APERTURA" name="tipomovimiento" >
+                                        <input id="txtmotivo" type="hidden" value="Apertura de Caja" name="txtmotivo" />
+                                    </div>
+
+                                    <div class="col-lg-6 left">
+                                        <label for="inputPlaca">Total en Bolivianos</label>
+                                        <div class="form-group has-success">
+                                                <input id="txtmontoapertura" type="text" class="form-control" style="text-align:center;" placeholder="Ingrese el total  de su transaccion" name="txtmontoapertura" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-lg-12 left">
+                            <button id='btnRegAct' name='btnRegAct' class="btn btn-success" type="submit"><i class="fa fa-floppy-saved"></i> Registrar Monto de Apertura de Caja</button>
+                            <hr>
+                            <span class="lead text-primary"></span>
+                        </div>
+                    </form>
+                </div>
+            <!--Fin-Contenido-->
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
+
+
+
+<script type="text/javascript">
+
+    $('#caja').addClass("treeview active");
+
+    $('#apertura_caja').addClass("active");
+
+</script>
+

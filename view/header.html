@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Software Empresarial | Soluciones Tecnologicas Alfa</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <!-- SHADOWBOX ZOOM IMAGEN -->
+    <link rel="stylesheet" type="text/css" href="public/shadowbox/shadowbox.css">
+    <script type="text/javascript" src="public/shadowbox/shadowbox.js"></script>
+    <script type="text/javascript">
+    Shadowbox.init();
+</script>
+    <!-- fin script SHADOWBOX ZOOM IMAGEN -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="public/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="public/css/_all-skins.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/css/dataTables.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/js/swat/sweet/lib/sweet-alert.css">
+    <link rel="stylesheet" type="text/css" href="public/css/buttons.dataTables.min.css">
+
+    <!-- jQuery 2.1.4 -->
+    <script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery.numeric.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script type="text/javascript" src="public/js/app.min.js"></script>
+    <script type="text/javascript" src="public/js/bootbox.min.js"></script>
+
+    <script type="text/javascript" src="public/js/dataTables.js"></script>
+
+    <script type="text/javascript" src="public/js/swat/sweet/lib/sweet-alert.min.js"></script>
+    <script type="text/javascript" src="public/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="public/js/jszip.min.js"></script>
+    <script type="text/javascript" src="public/js/pdfmake.min.js"></script>
+    <script type="text/javascript" src="public/js/vfs_fonts.js"></script>
+    <script type="text/javascript" src="public/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="public/js/Chart.js"></script>
+
+    <script type="text/javascript" src="public/scripts/Categoria.js"></script>
+    <script type="text/javascript" src="public/scripts/Articulo.js"></script>
+	  <script type="text/javascript" src="public/scripts/Almacen.js"></script>
+    <script type="text/javascript" src="public/scripts/Usuario.js"></script>
+    <script type="text/javascript" src="public/scripts/Empleado.js"></script>
+
+    <script type="text/javascript" src="public/scripts/Ingreso.js"></script>
+    <script type="text/javascript" src="public/scripts/Global.js"></script>
+    <script type="text/javascript" src="public/scripts/Tipo_Documento.js"></script>
+    <script type="text/javascript" src="public/scripts/Sucursal.js"></script>
+    <script type="text/javascript" src="public/scripts/Traspaso.js"></script>
+
+    <script type="text/javascript" src="public/scripts/Venta.js"></script>
+    <script type="text/javascript" src="public/scripts/Credito.js"></script>
+    <script type="text/javascript" src="public/scripts/Cliente.js"></script>
+    <script type="text/javascript" src="public/scripts/Proveedor.js"></script>
+    <script type="text/javascript" src="public/scripts/Unidad_medida.js"></script>
+    <script type="text/javascript" src="public/scripts/Permisos.js"></script>
+    <script type="text/javascript" src="public/scripts/ConsultasCompras.js"></script>
+    <script type="text/javascript" src="public/scripts/ConsultasVentas.js"></script>
+    <script type="text/javascript" src="public/scripts/jquery.toaster.js"></script>
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="ico/internet.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/internet.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/internet.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/internet.ico">
+    <link rel="apple-touch-icon-precomposed" href="ico/ico/internet.ico">
+
+  <style type="text/css">
+    input[type="text"]{
+      text-align: center;
+    }
+  </style>
+
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" class="logo"  style="Background-color:#2d9c69  !important;  border-right: solid 1px white;" >
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>IL</b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span  class="logo-lg" ><b>IMPORTADORA</b></span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top"  style="Background-color:#2d9c69 !important; " role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Navegación</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">Hoy</span>
+                </a>
+
+                <?php
+
+                require_once "model/Grafico.php";
+
+                $objGlobal = new Grafico();
+
+                $query_Global = $objGlobal->Totales($_SESSION["idsucursal"]);
+                while ($reg_Global= $query_Global->fetch_object()) {
+                      $moneda=$reg_Global->moneda;
+                      $totalingreso=$reg_Global->totalingreso;
+                      $totalcontado=$reg_Global->totalcontado;
+                      $totalcredito=$reg_Global->totalcredito;
+                }
+
+                ?>
+                <ul class="dropdown-menu">
+                  <li class="header">Estadísticas del día de hoy</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-warning text-yellow"></i> Total Compras <?php echo $moneda." ".$totalingreso;?>
+                        </a>
+
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-shopping-cart text-green"></i> Total Ventas <?php echo $moneda." ".$totalcontado;?>
+                        </a>
+                      </li>
+
+
+
+
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">Ver todo</a></li>
+                </ul>
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="<?php echo $_SESSION["logo"] ?>" class="user-image" alt="User Image">
+                  <span class="hidden-xs"><?php echo $_SESSION["sucursal"]?></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="<?php echo $_SESSION["logo"] ?>" class="img-circle" alt="User Image">
+                    <p>
+                      <?php echo $_SESSION["empleado"] ?> - <?php echo $_SESSION["tipo_usuario"] ?>
+                      <small><?php echo $_SESSION["tipo_usuario"] ?>, <?php echo $_SESSION["sucursal"]?> <?php echo $_SESSION["direccion"]?> </small>
+                    </p>
+                  </li>
+
+                  <!--
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="acceder.php" class="btn btn-default btn-flat">Cambiar Sucursal</a>
+                    </div>Menu Footer-->
+                    <div class="" style ="width :100%;">
+                      <a href="ajax/UsuarioAjax.php?op=Salir" class="btn btn-default btn-flat">Salir</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel" style ="height :65px !important;" >
+            <div class="pull-left image">
+              <img src="<?php echo $_SESSION["foto"] ?>" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p><?php echo $_SESSION["empleado"] ?></p>
+              <a href="#"><i class="fa fa-circle text-success"></i>Activo</a>
+            </div>
+          </div>
+
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+
+          <ul class="sidebar-menu">
+<div style="text-align:center;padding: 0;"> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=small&timezone=America%2FLa_Paz" width="100%" height="80" frameborder="0" seamless></iframe> </div>
+            <li id="liEstadistica" class="active treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Escritorio</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liEscritorio"><a href="Escritorio.php"><i class="fa fa-circle-o"></i> Estadísticas</a></li>
+              </ul>
+            </li>
+            <li class="treeview" id="liMantenimiento">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Mantenimiento</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+			  <!--
+                <li id="liGeneral"><a href="Global.php" accesskey="a"><i class="fa fa-circle-o"></i> General</a></li>
+                <li id="liSucursal"><a href="Sucursal.php" accesskey="b"><i class="fa fa-circle-o"></i> Sucursal</a></li>-->
+                <li id="liEmpleados"><a href="Empleado.php" accesskey="c"><i class="fa fa-circle-o"></i> Vendedor</a></li>
+                <li id="liUsuarios"><a href="Usuario.php" accesskey="d"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+               <!--   <li id="liTipoDoc"><a href="Tipo_Documento.php" accesskey="e"><i class="fa fa-circle-o"></i> Tipo Documento</a></li>-->
+              </ul>
+            </li>
+            <li class="treeview" id="liAlmacen">
+              <a href="#">
+                <i class="fa fa-edit"></i> <span>Base Datos Productos</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liArticulos"><a href="Articulo.php"><i class="fa fa-circle-o"></i>Productos</a></li>
+                <li id="liCategorias"><a href="Categoria.php"><i class="fa fa-circle-o"></i>Categorías</a></li>
+                <li id="liUM"><a href="Unidad_Medida.php"><i class="fa fa-circle-o"></i> Marcas </a></li>
+              </ul>
+            </li>
+
+
+            <li class="treeview" id="liCompras">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Compras</span>
+                <span class="label label-primary pull-right">C</span>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liIng"><a href="Ingreso.php" ><i class="fa fa-circle-o"></i> Realizar Compra</a></li>
+                <li id="liProveedores"><a href="Proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li id="liDeudasPendientes"><a href="Deuda.php"><i class="fa fa-circle-o"></i> Cuentas por Pagar</a></li>
+              </ul>
+            </li>
+            <li class="treeview" id="liVentas">
+              <a href="#">
+                <i class="fa fa-shopping-cart"></i>
+                <span> Ventas</span>
+                <span class="label label-primary pull-right bg-green">V</span>
+              </a>
+              <ul class="treeview-menu">
+                <li id="liPedidos"><a href="Pedido.php"><i class="fa fa-circle-o"></i> Realizar Venta</a></li>
+                <li id="liVenta"><a href="Venta.php"><i class="fa fa-circle-o"></i>Proformas</a></li>
+				<li id="liClientes"><a href="Cliente.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
+
+				 <li id="liConfigurarSerie"><a href="DocSucursal.php"><i class="fa fa-circle-o"></i> Conf. Comprobantes</a></li>
+              <!--  <li id="liVenta"><a href="Venta.php"><i class="fa fa-circle-o"></i> Pedidos</a></li>-->
+                <li id="licreditos"><a href="Credito.php"><i class="fa fa-circle-o"></i> Créditos</a></li>
+
+              </ul>
+            </li>
+
+
+			     <li    class="treeview" id="almacen">
+              <a href="#">
+                <i class="fa fa-edit"></i> <span>Almacen</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id=" med"><a href="Almacen.php"><i class="fa fa-circle-o"></i>Productos en Almacen</a></li>
+                <li id="liTraspasos"><a href="Traspaso.php" accesskey="d"><i class="fa fa-circle-o"></i> Traspasos</a></li>
+              </ul>
+            </li>
+
+
+            <li    class="treeview" id="caja">
+               <a href="#">
+                 <i class="fa fa-edit"></i> <span>Caja</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+               </a>
+               <ul class="treeview-menu">
+                 <li id=" ingresos_arqueo"><a href="ingresos_arqueo.php"><i class="fa fa-circle-o"></i>Ingresos/Egresos.</a></li>
+                 <li id=" arqueo"><a href="arqueo.php"><i class="fa fa-circle-o"></i>Arqueo.</a></li>
+
+               </ul>
+             </li>
+
+
+
+            <li class="treeview" id="liConsultaCompras">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Consultas Compras</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+              <!--   <li id="libroventas"><a href="libro_Compras_IVA.php"><i class="fa fa-circle-o"></i>Libro de Compras IVA</a></li>-->
+                <li id="liCompraFechas"><a href="ComprasFechas.php"><i class="fa fa-circle-o"></i> Compras Generales</a></li>
+                <li id="liCompraDetalladas"><a href="ComprasDetalladas.php"><i class="fa fa-circle-o"></i> Compras Detalladas</a></li>
+                <li id="liCompraProveedor"><a href="ComprasProveedor.php"><i class="fa fa-circle-o"></i> C. Gen. Proveedor</a></li>
+                <li id="liComprasDetProveedor"><a href="ComprasDetProveedor.php"><i class="fa fa-circle-o"></i> C. Det. Proveedor</a></li>
+                <li id="liKardexValorizado"><a href="KardexValorizado.php"><i class="fa fa-circle-o"></i> Kardex Valorizado</a></li>
+                <li id="liStockArticulos"><a href="StockArticulos.php"><i class="fa fa-circle-o"></i> Stock de Artículos</a></li>
+              </ul>
+            </li>
+            <li class="treeview" id="liConsultaVentas">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Consultas Ventas</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+              <!--  <li id="liVentasIva"><a href="VentasDetalladasIva.php"><i class="fa fa-circle-o"></i> Libro De Ventas IVA</a></li>-->
+      <!--
+                <li id="liVentasFechas"><a href="VentasFechas.php"><i class="fa fa-circle-o"></i> Ventas Generales</a></li>     -->
+                <li id="liVentasDetalladas"><a href="VentasDetalladas.php"><i class="fa fa-circle-o"></i> Ventas Detalladas</a></li>
+
+				  <li id="liVentasEmpleado"><a href="VentaEmpleado.php"><i class="fa fa-circle-o"></i> Ventas Por Empleado</a></li>
+                <li id="liVentasEmpleadoDet"><a href="VentaEmpleadoDet.php"><i class="fa fa-circle-o"></i> Ventas Por Emp. Detalladas</a></li>
+                <li    id="liVentasCliente"><a href="VentasCliente.php"><i class="fa fa-circle-o"></i> Ventas Por Cliente</a></li>
+                <!--                  <li id="liVentasContado"><a href="VentasContado.php"><i class="fa fa-circle-o"></i> Ventas Contado</a></li>
+                <li id="liVentaPend"><a href="VentaPend.php"><i class="fa fa-circle-o"></i> Ventas Pendientes</a></li>
+
+                <li id="liVentascredito"><a href="VentasCredito.php"><i class="fa fa-circle-o"></i> Ventas Crédito</a></li>
+ -->
+
+
+              </ul>
+            </li>
+
+             <li>
+              <a href="Files/Manual/Manual.pdf" target="_blank">
+                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
+                <small class="label pull-right bg-red">PDF</small>
+              </a>
+            </li>
+            <li id="copiaSeguridad">
+
+            <a href="CopiaSeguridad.php">
+              <i class="fa fa-circle-o"></i> <span>Copia de Seguridad</span>
+            </a>
+
+            </li>
+<!--**********************************************CODIGO DE CONTROL***********************************************
+            <li    class="treeview" id="codigo">
+               <a href="#">
+                 <i class="fa fa-edit"></i> <span>Codigo de Control</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+               </a>
+               <ul class="treeview-menu">
+                 <li id=" verificar"><a href="codigo_control.php"><i class="fa fa-circle-o"></i>Verficar.</a></li>
+
+
+               </ul>
+             </li>-->
+
+            <li id="liAcerca"><a href="Acerca.php">
+                <i class="fa fa-info-circle"></i> <span>Acerca De...</span></a></li>
+                <small class="label pull-right bg-yellow">BOL</small>
+              </a>
+            </li>
+            <li>
+              <a href="ajax/UsuarioAjax.php?op=Salir">
+                <i class="fa fa-close"></i> <span>Cerrar Sesion</span>
+
+              </a>
+            </li>
+
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+
+          <div class="row">
+            <div class="col-md-12">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuAlmacen" value="<?php echo $_SESSION["mnu_almacen"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuCompras" value="<?php echo $_SESSION["mnu_compras"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuVentas" value="<?php echo $_SESSION["mnu_ventas"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuMantenimiento" value="<?php echo $_SESSION["mnu_mantenimiento"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuCaja" value="<?php echo $_SESSION["mnu_caja"]; ?>">
+              <!--<input type="hidden" name="txtMnuAlmacen" id="txtMnuSeguridad" value="<?php echo $_SESSION["mnu_seguridad"]; ?>">-->
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuProd" value="<?php echo $_SESSION["mnu_productos"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuConsultaCompras" value="<?php echo $_SESSION["mnu_consulta_compras"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuConsultaVentas" value="<?php echo $_SESSION["mnu_consulta_ventas"]; ?>">
+              <input type="hidden" name="txtMnuAlmacen" id="txtMnuAdmin" value="<?php echo $_SESSION["mnu_admin"]; ?>">
