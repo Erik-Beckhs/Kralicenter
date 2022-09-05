@@ -1,4 +1,7 @@
-<?php error_reporting (0);?>
+<?php 
+error_reporting (0);
+date_default_timezone_set("America/La_Paz"); 
+?>
 
 <script type="text/javascript">
 /*===============================ATAJO TECLADO ===========================*/
@@ -103,7 +106,10 @@ $nombre_empleado = $response_emp->apellidos;
         </td>
     </tr>
     <tr>
-        <td align="center">Tel: <?php echo $telefono.' '.$nombre_cliente; ?></td>
+        <td align="center">Tel: <?php echo $telefono; ?></td>
+    </tr>
+    <tr>
+        <td align="center"><strong>Cliente:</strong> <?php echo $nombre_cliente; ?></td>
     </tr>
     <tr>
         <!--Y-m-d-g:i a-->

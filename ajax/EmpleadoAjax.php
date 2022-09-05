@@ -137,6 +137,29 @@
 		        }
 
 		    break;
+		case "listEmpleado":
+			require_once "../model/Empleado.php";
+
+            $objEmpleado = new Empleado();
+
+            $query_prov = $objEmpleado->Listar();
+
+            $i = 1;
+                while ($reg = $query_prov->fetch_object()) {
+                     echo '<tr>
+                            <td><input type="radio" name="optEmpleadoBusqueda" data-nombre="'.$reg->nombre.'" id="'.$reg->idempleado.'" value="'.$reg->idempleado.'" /></td>
+                            <td>'.$i.'</td>
+							<td> <img width=100px height=100px src='.$reg->foto.' /></td>
+                            <td>'.$reg->nombre.' '.$reg->apellidos.'</td>
+                            <td>'.$reg->tipo_documento.' - '.$reg->num_documento.'</td>
+                            <td>'.$reg->direccion.'</td>
+							<td>'.$reg->telefono.'</td>
+                            <td>'.$reg->email.'</td>
+                           </tr>';
+                     $i++;
+                }
+
+        break;
 
 	}
 		

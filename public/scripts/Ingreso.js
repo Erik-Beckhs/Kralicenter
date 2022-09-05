@@ -41,6 +41,7 @@ function init() {
     $("#btnBuscarProveedor").click(AbrirModalProveedor);
     $("#btnBuscarSucursalC").click(AbrirModalSucursalC);
     $("#btnBuscarSucursal").click(AbrirModalSucursal);
+    $("#btnBuscarEmpleado").click(AbrirModalEmpleado);
     $("#btnBuscarArt").click(AbrirModalArticulo);
     $("form#frmcreditosC").submit(SavecreditoC);
     $("#frmIngresos").submit(GuardarIngreso);
@@ -527,6 +528,7 @@ else {
         $("#modalListadoSucursal").modal("show");
 
         $.post("./ajax/IngresoAjax.php?op=listSucursal", function(r){
+            console.log(r);
             $("#Sucursales").html(r);
             $("#tblSucursales").DataTable();
         });
@@ -568,6 +570,27 @@ else {
 
             }).DataTable();
 	}
+
+    function AbrirModalEmpleado(){
+		$("#modalListadoEmpleado").modal("show");
+
+        // $.post("./ajax/VentaAjax.php?op=listClientesV", function(r){//cambiar a uno propio
+        $.post("./ajax/EmpleadoAjax.php?op=listEmpleado", function(r){
+            //console.log(r);
+            $("#Empleados").html(r);//linea 327 venta.html donde esta el id=cliente
+            $("#tblEmpleados").DataTable();
+    });
+
+    // var recibi=$("#recibi").val()
+    // var total=($("#txtTotalPed").val() )-(($("#descuento").val()*$("#txtTotalPed").val())/100)
+    // $("#cambio").val(recibi-total);
+
+	// 	$.post("./ajax/PedidoAjax.php?op=listClientesP", function(r){
+    //         $("#ClienteP").html(r);
+    //         $("#tblClientesP").DataTable();
+    //     });
+	}
+
 
     /*
 
