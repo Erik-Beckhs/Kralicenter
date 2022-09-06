@@ -81,6 +81,19 @@ function init() {
         $("#modalListadoSucursal").modal("hide");
     });
 
+    $("#btnAgregarEmpleado").click(function(e){
+        e.preventDefault();
+        var opt = $("input[type=radio]:checked");
+        $("#txtIdEmpleado").val(opt.val());
+        $("#txtEmpleado").val(opt.attr("data-nombre"));
+
+        // $("#txtIdSucursal2").val(opt.val());
+        // $("#txtSucursal2").val(opt.attr("data-nombre"));
+
+        $("#modalListadoEmpleado").modal("hide");
+    });
+
+
 	$("#btnAgregarArt").click(function(e){
 		e.preventDefault();
 

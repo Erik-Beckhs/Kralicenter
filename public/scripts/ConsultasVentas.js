@@ -545,9 +545,9 @@ function Libroventas(){
 	}
 
 	function ListadoVentasEmpleado(){
-
 		if($("#cboFechaDesdeVentEmp").val() != "" && $("#cboFechaHastaVentEmp").val() != ""){
 			var fecha_desde = $("#cboFechaDesdeVentEmp").val(), fecha_hasta = $("#cboFechaHastaVentEmp").val(), idsucursal = $("#txtIdSucursal").val();
+			var idempleado = $('#txtIdEmpleado').val();
 			var tabla = $('#tblVentaEmp').dataTable(
 				{   "aProcessing": true,
 		       		"aServerSide": true,
@@ -559,7 +559,6 @@ function Libroventas(){
 			            'pdfHtml5'
 			        ],
 		        	"aoColumns":[
-
 		                    {   "mDataProp": "1"},
 		                    {   "mDataProp": "2"},
 		                    {   "mDataProp": "3"},
@@ -570,18 +569,17 @@ function Libroventas(){
 		                    {   "mDataProp": "8"},
 		                    {   "mDataProp": "9"},
 		                    {   "mDataProp": "10"},
-												{   "mDataProp": "11"},
-												{   "mDataProp": "12"},
-												{   "mDataProp": "13"},
-												{   "mDataProp": "14"},
-		                    {   "mDataProp": "15"}
+							{   "mDataProp": "11"}
 
 		        	],"ajax":
 			        	{
 			        		url: './ajax/ConsultasVentasAjax.php?op=listVentasEmpleado',
 							type : "get",
 							dataType : "json",
-							data:{fecha_desde: fecha_desde, fecha_hasta: fecha_hasta, idsucursal: idsucursal},
+							data:{fecha_desde, fecha_hasta, idsucursal, idempleado},
+							// success:function(data){
+							// 	console.log(data);
+							// },
 							error: function(e){
 						   		console.log(e.responseText);
 							}
@@ -623,9 +621,6 @@ function Libroventas(){
 		                    {   "mDataProp": "12"},
 		                    {   "mDataProp": "13"},
 												{   "mDataProp": "14"}
-
-
-
 		        	],"ajax":
 			        	{
 			        		url: './ajax/ConsultasVentasAjax.php?op=listVentasEmpleadoDet',

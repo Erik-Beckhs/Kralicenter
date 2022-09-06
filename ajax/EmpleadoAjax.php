@@ -147,7 +147,7 @@
             $i = 1;
                 while ($reg = $query_prov->fetch_object()) {
                      echo '<tr>
-                            <td><input type="radio" name="optEmpleadoBusqueda" data-nombre="'.$reg->nombre.'" id="'.$reg->idempleado.'" value="'.$reg->idempleado.'" /></td>
+                            <td><input type="radio" name="optEmpleadoBusqueda" data-nombre="'.$reg->nombre.' '.$reg->apellidos.'" id="'.$reg->idempleado.'" value="'.$reg->idempleado.'" /></td>
                             <td>'.$i.'</td>
 							<td> <img width=100px height=100px src='.$reg->foto.' /></td>
                             <td>'.$reg->nombre.' '.$reg->apellidos.'</td>

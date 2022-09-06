@@ -7,14 +7,11 @@ date_default_timezone_set("America/La_Paz");
 /*===============================ATAJO TECLADO ===========================*/
 
 
-	var eventoControlado = false;
+var eventoControlado = false;
 
 window.onload = function() { document.onkeypress = mostrarInformacionCaracter;
 
 document.onkeyup = mostrarInformacionTecla; }
-
-
-
 
 function mostrarInformacionCaracter(evObject) {
 

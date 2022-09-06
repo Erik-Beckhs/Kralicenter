@@ -326,11 +326,11 @@ $Hdebito_fiscal =$Gimporte_base_debito_fiscal *13/100;
                $fecha_desde = $_REQUEST["fecha_desde"];
                $fecha_hasta = $_REQUEST["fecha_hasta"];
                $idsucursal = $_REQUEST["idsucursal"];
+               $idempleado = $_REQUEST["idempleado"];
                $data= Array();
-               $query_Tipo = $objCategoria->ListarVentasEmpleado($idsucursal, $_SESSION["idempleado"], $fecha_desde, $fecha_hasta);
-
+               //$query_Tipo = $objCategoria->ListarVentasEmpleado($idsucursal, $_SESSION["idempleado"], $fecha_desde, $fecha_hasta);
+               $query_Tipo = $objCategoria->ListarVentasEmpleado($idsucursal, $idempleado, $fecha_desde, $fecha_hasta);
                while ($reg = $query_Tipo->fetch_object()) {
-
                     $data[] = array(
                          "1"=>$reg->fecha,
                          "2"=>$reg->sucursal,
@@ -338,7 +338,7 @@ $Hdebito_fiscal =$Gimporte_base_debito_fiscal *13/100;
                          "4"=>$reg->cliente,
                          "5"=>$reg->comprobante,
                          "6"=>$reg->numero,
-												 "7"=>$reg->tipo_pago,
+					"7"=>$reg->tipo_pago,
                          "8"=>$reg->impuesto,
                          "9"=>$reg->subtotal,
                          "10"=>$reg->totalimpuesto,
@@ -351,7 +351,6 @@ $Hdebito_fiscal =$Gimporte_base_debito_fiscal *13/100;
                "iTotalDisplayRecords" => count($data),
                "aaData"=>$data);
                echo json_encode($results);
-
                break;
 
           case "listVentasEmpleadoDet":
@@ -371,8 +370,8 @@ $Hdebito_fiscal =$Gimporte_base_debito_fiscal *13/100;
                          "3"=>$reg->cliente,
                          "4"=>$reg->comprobante,
                          "5"=>$reg->numero,
-												 "6"=>$reg->tipo_pago,
-												 "7"=>$reg->tipo_venta,
+					"6"=>$reg->tipo_pago,
+					"7"=>$reg->tipo_venta,
                          "8"=>$reg->articulo,
                          "9"=>$reg->Recibi,
                          "10"=>$reg->Cambio,
