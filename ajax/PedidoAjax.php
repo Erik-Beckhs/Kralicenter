@@ -8,7 +8,7 @@ switch ($_GET["op"]) {
 
   require_once "../model/Pedido.php";
 
-  $obj= new Pedido();
+  $obj=new Pedido();
 
       $idUsuario = $_POST["idUsuario"];
       $idSucursal = $_POST["idSucursal"];
@@ -25,8 +25,6 @@ switch ($_GET["op"]) {
       $tipo_pago =$_POST["tipo_pago"];
       $tipo_venta =$_POST["tipo_venta"];
       $descuento =$_POST["descuento"];
-
-
 
      $hosp = $obj->Registrar_Ticket($idUsuario, $idSucursal, $tipo_comprobante,$Fecha_emision_factura, $Total_venta,$_POST["detalle"],
      $nombre_cliente,$Documento_cliente,$numero_TF,$recibi,$cambio,$idclientet,$tipo_pago,$tipo_venta,$descuento);
