@@ -26,8 +26,8 @@
                             <label id="inputCliente"></label>
                             <div class="form-group has-success">
                                 <input id="txtIsProforma"   type="hidden" maxlength="1" class="form-control" name="txtIsProforma" required="" placeholder="" autofocus="" />
-                                <input id="txtIdUsuario"  type="hidden"  value="<?php echo $_SESSION["idusuario"] ?>" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
-                                <input id="txtIdSucursal"  type="hidden" value="<?php echo $_SESSION["idsucursal"] ?>" maxlength="50" class="form-control" name="txtIdSucursal" required="" placeholder="" autofocus="" />
+                                <input id="txtIdUsuario"  type="hidden"  value="<?php echo $_SESSION['idusuario'] ?>" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
+                                <input id="txtIdSucursal"  type="hidden" maxlength="50" class="form-control" name="txtIdSucursal" required="" placeholder="" autofocus="" />
                               <!--  <input id="txtIdCliente" class="form-control" name="txtIdCliente" required placeholder="" autofocus="" value="<?php echo $_SESSION["idpersona"] ?>" />
                               -->
                             </div>
@@ -373,29 +373,19 @@
 
       <form  role="form" name="frmClienteP" id="frmClienteP" enctype="multipart/form-data">
 
-
       <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
           <div class="form-group has-success">
               <label>Nombre (*):</label>
-              <input autofocus id="txtNombre" type="text" value= "SIN NOMBRE" maxlength="100" name="txtNombre" required="" class="form-control" placeholder="Nombre / Razón Social" autofocus="" />
+              <input readonly required autofocus id="txtNombre" type="text" value= "SIN NOMBRE" maxlength="100" name="txtNombre" required="" class="form-control" placeholder="Nombre / Razón Social" autofocus="" />
           </div>
       </div>
-
-
-
-
 
       <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="form-group has-success">
               <label>Documento (*):</label>
-              <input   onkeypress="return valida(event)" id="txtNum_Documento" value= "0" type="text" maxlength="20" name="txtNum_Documento" required="" class="form-control" placeholder="Número de documento" autofocus="" />
+              <input readonly required onkeypress="return valida(event)" id="txtNum_Documento" value= "0" type="text" maxlength="20" name="txtNum_Documento" required="" class="form-control" placeholder="Número de documento" autofocus="" />
           </div>
       </div>
-
-
-
-
-
 
       <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
           <div class="form-group has-success">
@@ -405,7 +395,6 @@
               </select>
           </div>
       </div>
-
 
       <div class="col-lg-3">
           <label>Tipo Pago</label>
@@ -438,10 +427,6 @@
                        </div>
 
                    </div>
-
-
-
-
 
               <div class="col-lg-3">
                                <div class="form-group has-success">
@@ -491,7 +476,7 @@
                                               <label for="inputInscripcion"></label>
                                               <div class="form-group  has-success">
 
-                                                  <input id="txtNumeroVent" readonly  type="hidden" class="form-control" name="txtNumeroVent" required="" placeholder=""/>
+                                                  <input id="txtNumeroVent" readonly  type="hidden" class="form-control" name="txtNumeroVent"/>
                                               </div>
                                           </div>
 
@@ -608,7 +593,8 @@
 
 
     </div>
-</form>
+      
+    </form>
 
 
 

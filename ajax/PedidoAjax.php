@@ -18,7 +18,8 @@ switch ($_GET["op"]) {
 
       $nombre_cliente =isset($_POST["nombre_cliente"])?$_POST["nombre_cliente"]:"";
       $Documento_cliente =isset($_POST["Documento_cliente"])?$_POST["Documento_cliente"]:"";
-      $numero_TF =isset($_POST["Numero_TF"])?$_POST["Numero_TF"]:0;
+      //$numero_TF =isset($_POST["Numero_TF"])?$_POST["Numero_TF"]:0;
+      $numero_TF = $_POST["Numero_TF"];
       $recibi =$_POST["recibi"];
       $cambio =$_POST["cambio"];
       $idclientet =$_POST["idClientet"];
@@ -60,7 +61,7 @@ require_once "../CodigoControl/ControlCode.php";
     $obj= new Pedido();
 
 
-                $idUsuario = $_POST["idUsuario"];
+        $idUsuario = $_POST["idUsuario"];
         $idSucursal = $_POST["idSucursal"];
         $tipo_comprobante =$_POST["tipo_comprobante"];
         $Fecha_emision_factura = date("d/m/Y");
@@ -184,13 +185,13 @@ $idcliente = $Objeto->registrarCliente_Para_Factura($tipo_persona,$nombre_client
         require_once "../model/Pedido.php";
         $data= Array();
         $objPedido = new Pedido();
-        if ( !isset($_SESSION['idsucursal']))
+        if (!isset($_SESSION['idsucursal']))
         {
             $_SESSION['idsucursal'] = 1;
         }
         $query_Pedido = $objPedido->Listar($_SESSION["idsucursal"]);
-$numero = 5;
-$email ="";
+        $numero = 5;
+        $email ="";
         $i = 1;
             while ($reg = $query_Pedido->fetch_object()) {
 
@@ -693,8 +694,8 @@ $descuento = "";
 
                     $query_idTicket = $objPedido->Get_id_ticket($txtSucursal);
 
-
                     echo json_encode((int)$query_idTicket);
+                    //echo json_encode($query_idTicket);
 
                     break;
 

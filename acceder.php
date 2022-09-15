@@ -208,6 +208,9 @@ background-repeat: no-repeat;"  >
             mnu_admin : mnu_admin,
             mnu_productos : mnu_productos
         };
+
+        localStorage.setItem('idSucursal', idsucursal);
+
         $.post("ajax/UsuarioAjax.php?op=IngresarPanel", data, function(r){
                 $(location).attr("href", "Escritorio.php");
           });

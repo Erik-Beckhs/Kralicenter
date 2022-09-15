@@ -275,34 +275,33 @@ public function Get_id_ticket($Sucursal){
 					global $conexion;
 
 
-
+					$iduTicket = 0;
 					//Recuperamos el ID DE TICKET
 
 
 
-					$get_id_ticket ="select  idtipo_documento  from tipo_documento where nombre = 'PROFORMA'";
+					// $get_id_ticket ="select  idtipo_documento  from tipo_documento where nombre = 'PROFORMA'";
 
-					$consultax=  $conexion->query($get_id_ticket);
+					// $consultax=  $conexion->query($get_id_ticket);
 
 
 
-					while ($regx = $consultax->fetch_object()) {
+					// while ($regx = $consultax->fetch_object()) {
 
-						$iddo =		 $regx->idtipo_documento;
+					// 	$iddo =		 $regx->idtipo_documento;
 
-				 	}
-
+				 	// }
 
 
 					 // ahora con esto traemos el ultimo valor que tenia ticket
 
-					$sql = "SELECT ultimo_numero from detalle_documento_sucursal where idtipo_documento ='$iddo' and idsucursal = '$Sucursal'";
+					//$sql = "SELECT ultimo_numero from detalle_documento_sucursal where idtipo_documento ='$iddo' and idsucursal = '$Sucursal'";
+					$sql = "SELECT num_comprobante FROM venta WHERE idSucursal = ".$_SESSION['idsucursal']." and tipo_comprobante ='PROFORMA' order by num_comprobante DESC limit 1";
 
 					$query = $conexion->query($sql);
 
-
 					while ($reg1 = $query->fetch_object()) {
-						$iduTicket =		 $reg1->ultimo_numero;
+						$iduTicket = $reg1->num_comprobante;
 					}
 
 					return $iduTicket;

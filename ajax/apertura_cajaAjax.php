@@ -8,7 +8,7 @@ switch ($_GET["op"]) {
         require_once "../model/ingresos_arqueo.php";
         $obj= new DocSucursal();
 
-        $CajaAbierta = $obj->MontoCajaAbierta($_SESSION['idsucursal'],$_SESSION['idusuario']);
+        $CajaAbierta = $obj->MontoCajaAbierta($_SESSION['idsucursal'], $_SESSION['idusuario']);
         echo json_encode((int)$CajaAbierta);
         break;
     case 'Save':

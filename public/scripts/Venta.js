@@ -83,7 +83,8 @@ var total = 0.0;
 
 		            //$.toaster({ priority : 'success', title : 'Mensaje', message : r});
 
-        		  $("#txtNumeroVent").val(r)
+                  var num = parseInt(r)+1;  
+        		  $("#txtNumeroVent").val(num);
 
 		       });
 		  }

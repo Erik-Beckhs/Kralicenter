@@ -347,7 +347,6 @@
 
 										$query_idTicket = $objPedido->Get_id_ticket($txtSucursal);
 
-
 										echo json_encode((int)$query_idTicket);
 
 										break;
