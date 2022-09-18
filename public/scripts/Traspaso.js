@@ -190,10 +190,10 @@ function agregarCantidadTraspaso(){// funcion que llamamos del archivo ajax/Cate
     })
 }
 
-function AgregarPedCarritoTraspaso(iddet_ing, idingreso, idarticulo, stock_actual, art, cod, serie, precio_venta, descripcion, precio_compra, precio_distribuidor) {
+function AgregarPedCarritoTraspaso(iddet_ing, idingreso, idarticulo, stock_actual, art, cod, serie, precio_venta, descripcion, precio_compra, precio_distribuidor, precio2, precio3, precio4, precio5) {
 
     if (stock_actual > 0) {
-            var detalles = new Array(iddet_ing, art, precio_venta, "1", "0.0", stock_actual, cod, serie, idingreso, idarticulo, descripcion, precio_compra, precio_distribuidor);
+            var detalles = new Array(iddet_ing, art, precio_venta, "1", "0.0", stock_actual, cod, serie, idingreso, idarticulo, descripcion, precio_compra, precio_distribuidor, precio2, precio3, precio4, precio5);
             elementos.push(detalles);
             ConsultarDetallesTraspaso();
             $("#btnFinalizarTraspaso").show();

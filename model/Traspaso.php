@@ -54,8 +54,8 @@
 				}
 
 // Agregar en detalle_ingreso los artículos traspasados a la nueva sucursal.
-				$sql_detalleingreso = "INSERT INTO detalle_ingreso (idingreso, idarticulo, codigo, serie, descripcion, stock_ingreso, stock_actual, precio_compra, precio_ventadistribuidor, precio_ventapublico)
-										VALUES($idingresonuevo, ".$valor[9].", '".$valor[6]."', '".$valor[7]."', '".$valor[10]."', ".$valor[3].", ".$valor[3].", ".$valor[11].", ".$valor[12].", ".$valor[2].")";
+				$sql_detalleingreso = "INSERT INTO detalle_ingreso (idingreso, idarticulo, codigo, serie, descripcion, stock_ingreso, stock_actual, precio_compra, precio_ventadistribuidor, precio_ventapublico, precio2, precio3, precio4, precio5)
+				VALUES($idingresonuevo, ".$valor[9].", '".$valor[6]."', '".$valor[7]."', '".$valor[10]."', ".$valor[3].", ".$valor[3].", ".$valor[11].", ".$valor[12].", ".$valor[2].", ".$valor[13].", ".$valor[14].", ".$valor[15].", ".$valor[16].")";
 				$conexion->query($sql_detalleingreso) or $sw = false;
 
 // ahora agregamos lo que falta en la tabla detalle_traspaso despues de recuperar el idtraspaso

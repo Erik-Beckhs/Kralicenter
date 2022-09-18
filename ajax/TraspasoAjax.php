@@ -158,7 +158,7 @@
 				data-stock-actual="'.$reg->stock_actual.'" id="'.$reg->iddetalle_ingreso.'" value="'.$reg->iddetalle_ingreso.'"
 				data-toggle="tooltip" title="Agregar al carrito"
 
-				onclick="AgregarPedCarritoTraspaso('.$reg->iddetalle_ingreso.',\''.$reg->idingreso.'\',\''.$reg->idarticulo.'\',\''.$reg->stock_actual.'\',\''.$reg->Articulo.'\',\''.$reg->codigo.'\',\''.$reg->serie.'\',\''.$reg->precio_ventapublico.'\',\''.$reg->descripcion.'\',\''.$reg->precio_compra.'\',\''.$reg->precio_ventadistribuidor.'\');changeColor(this);" >
+				onclick="AgregarPedCarritoTraspaso('.$reg->iddetalle_ingreso.',\''.$reg->idingreso.'\',\''.$reg->idarticulo.'\',\''.$reg->stock_actual.'\',\''.$reg->Articulo.'\',\''.$reg->codigo.'\',\''.$reg->serie.'\',\''.$reg->precio_ventapublico.'\',\''.$reg->descripcion.'\',\''.$reg->precio_compra.'\',\''.$reg->precio_ventadistribuidor.'\',\''.$reg->precio2.'\',\''.$reg->precio3.'\',\''.$reg->precio4.'\',\''.$reg->precio5.'\');changeColor(this);" >
 				<i class="fa fa-check" ></i> </button>',
 
 
@@ -207,7 +207,7 @@
 					data-stock-actual="'.$reg->stock_actual.'" id="'.$reg->iddetalle_ingreso.'" value="'.$reg->iddetalle_ingreso.'"
 					data-toggle="tooltip" title="Agregar al carrito"
 
-					onclick="AgregarPedCarritoTraspaso('.$reg->iddetalle_ingreso.',\''.$reg->idingreso.'\',\''.$reg->idarticulo.'\',\''.$reg->stock_actual.'\',\''.$reg->Articulo.'\',\''.$reg->codigo.'\',\''.$reg->serie.'\',\''.$reg->precio_ventapublico.'\',\''.$reg->descripcion.'\',\''.$reg->precio_compra.'\',\''.$reg->precio_ventadistribuidor.'\');changeColor(this);" >
+					onclick="AgregarPedCarritoTraspaso('.$reg->iddetalle_ingreso.',\''.$reg->idingreso.'\',\''.$reg->idarticulo.'\',\''.$reg->stock_actual.'\',\''.$reg->Articulo.'\',\''.$reg->codigo.'\',\''.$reg->serie.'\',\''.$reg->precio_ventapublico.'\',\''.$reg->descripcion.'\',\''.$reg->precio_compra.'\',\''.$reg->precio_ventadistribuidor.'\',\''.$reg->precio2.'\',\''.$reg->precio3.'\',\''.$reg->precio4.'\',\''.$reg->precio5.'\');changeColor(this);" >
 					<i class="fa fa-check" ></i> </button>',
 
 
