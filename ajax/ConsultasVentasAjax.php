@@ -390,5 +390,25 @@ $Hdebito_fiscal =$Gimporte_base_debito_fiscal *13/100;
                echo json_encode($results);
 
                break;
+               case "totalVentas":
+
+                    $fecha_desde = $_REQUEST["fecha_desde"];
+                    $fecha_hasta = $_REQUEST["fecha_hasta"];
+                    $idsucursal = $_REQUEST["idsucursal"];
+                    //$data= Array();
+                    $data='';
+                    $query_Tipo = $objCategoria->totalVentaBs($idsucursal, $fecha_desde, $fecha_hasta);
+     
+                    while ($reg = $query_Tipo->fetch_object()) {
+     
+                         // $data[] = array(
+                         //      "0"=>$reg->total
+                         // );
+                         $data=$reg->total;
+                    }
+
+                    echo json_encode($data);
+     
+                    break;
 
 	}

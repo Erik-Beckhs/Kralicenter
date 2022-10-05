@@ -201,28 +201,6 @@ function Libroventas(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	function ListadoVentasFechas(){
 
 		if($("#cboFechaDesdeVent").val() != "" && $("#cboFechaHastaVent").val() != ""){
@@ -405,8 +383,6 @@ function Libroventas(){
 			        "bDestroy": true
 
 		    	}).DataTable();
-
-
 		}
 	}
 
@@ -590,10 +566,25 @@ function Libroventas(){
 		}
 	}
 
-	function ListadoVentasEmpleadoDet(){
+	jQuery.fn.dataTable.Api.register( 'sum()', function ( ) {
+		return this.flatten().reduce( function ( a, b ) {
+			if ( typeof a === 'string' ) {
+				a = a.replace(/[^\d.-]/g, '') * 1;
+			}
+			if ( typeof b === 'string' ) {
+				b = b.replace(/[^\d.-]/g, '') * 1;
+			}
+	 
+			return a + b;
+		}, 0 );
+	} );
 
+	function ListadoVentasEmpleadoDet(){
+		
 		if($("#cboFechaDesdeVentEmpDet").val() != "" && $("#cboFechaHastaVentEmpDet").val() != ""){
-			var fecha_desde = $("#cboFechaDesdeVentEmpDet").val(), fecha_hasta = $("#cboFechaHastaVentEmpDet").val(), idsucursal = $("#txtIdSucursal").val();
+			var fecha_desde = $("#cboFechaDesdeVentEmpDet").val();
+			var fecha_hasta = $("#cboFechaHastaVentEmpDet").val();
+			var idsucursal = $("#txtIdSucursal").val();
 			var tabla = $('#tblVentaEmpDet').dataTable(
 				{   "aProcessing": true,
 		       		"aServerSide": true,
@@ -605,7 +596,6 @@ function Libroventas(){
 			            'pdfHtml5'
 			        ],
 		        	"aoColumns":[
-
 		                    {   "mDataProp": "0"},
 		                    {   "mDataProp": "1"},
 		                    {   "mDataProp": "2"},
@@ -620,20 +610,42 @@ function Libroventas(){
 		                    {   "mDataProp": "11"},
 		                    {   "mDataProp": "12"},
 		                    {   "mDataProp": "13"},
-												{   "mDataProp": "14"}
+							{   "mDataProp": "14"}
 		        	],"ajax":
 			        	{
 			        		url: './ajax/ConsultasVentasAjax.php?op=listVentasEmpleadoDet',
 							type : "get",
 							dataType : "json",
-							data:{fecha_desde: fecha_desde, fecha_hasta: fecha_hasta, idsucursal: idsucursal},
+							data:{fecha_desde, fecha_hasta, idsucursal},
+							// success:function(data){
+							// 	console.log(data);
+							// 	return;
+							// },
 							error: function(e){
 						   		console.log(e.responseText);
 							}
 			        	},
-			        "bDestroy": true
+			        "bDestroy": true,
 
-		    	}).DataTable();
+		    }).DataTable();
 
+			//todo: realizar llamada ajax
+			$.ajax(
+				{
+					url: './ajax/ConsultasVentasAjax.php?op=totalVentas',               
+					data: {fecha_desde, fecha_hasta, idsucursal},
+					contentType: 'json',
+					type: 'get',
+					success: function (data) {
+						var a =JSON.parse(data);
+						$('#total').html(a);
+					},
+					error(e){
+						console.log('Ocurrió un error');
+					}
+			});
+			
 		}
+
+
 	}

@@ -126,4 +126,16 @@ WHERE venta.fecha BETWEEN '$fecha_desde' AND '$fecha_hasta' AND venta.tipo_compr
 			return $query;
 		}
 
+		public function totalVentaBs($idsucursal, $fecha_desde, $fecha_hasta){
+			global $conexion;
+			$sql = "select sum(dp.cantidad*(dp.precio_venta)-(v.descuento))as total from detalle_pedido dp inner join detalle_ingreso di on dp.iddetalle_ingreso=di.iddetalle_ingreso inner join articulo a on di.idarticulo=a.idarticulo inner join venta v on v.idventa=dp.idventa inner join sucursal s on v.idSucursal=s.idsucursal inner join usuario u on v.idusuario=u.idusuario inner join empleado e on u.idempleado=e.idempleado inner join persona pe on v.idCliente=pe.idpersona
+				where v.fecha>= '$fecha_desde' and v.fecha<= '$fecha_hasta'
+				and s.idsucursal=$idsucursal and v.estado='A'
+				order by v.fecha desc
+				";
+			$query = $conexion->query($sql);
+			return $query;
+		}
+
+	
 	}

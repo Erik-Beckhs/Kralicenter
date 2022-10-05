@@ -38,17 +38,22 @@
                             </div>
                         </div>
                         <?php } ?>
-                <div class="col-lg-4 left">
-                    <div class="form-group has-success">
-                        <label for="inputMarca">Desde :</label>
-                        <input id="txtIdSucursal" type="hidden" value="<?php echo $_SESSION["idsucursal"] ?>" maxlength="50" class="form-control" name="txtIdSucursal" required="" placeholder="" autofocus="" />
-                        <input id="cboFechaDesdeVentEmpDet" type="date" value="<?php echo date("Y-m-d"); ?>"  maxlength="50" class="form-control" name="cboFechaDesdeVentEmpDet" required="" />
+                <div style="padding:0 20px;">
+                    <div class="col-lg-4">
+                        <div class="form-group has-success">
+                            <label for="inputMarca">Desde :</label>
+                            <input id="txtIdSucursal" type="hidden" value="<?php echo $_SESSION["idsucursal"] ?>" maxlength="50" class="form-control" name="txtIdSucursal" required="" placeholder="" autofocus="" />
+                            <input id="cboFechaDesdeVentEmpDet" type="date" value="<?php echo date("Y-m-d"); ?>"  maxlength="50" class="form-control" name="cboFechaDesdeVentEmpDet" required="" />
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 left">
-                    <div class="form-group has-success">
-                        <label for="inputMarca">Hasta :</label>
-                        <input id="cboFechaHastaVentEmpDet" type="date" value="<?php echo date("Y-m-d"); ?>"  maxlength="50" class="form-control" name="cboFechaHastaVentEmpDet" required="" />
+                    <div class="col-lg-4">
+                        <div class="form-group has-success">
+                            <label for="inputMarca">Hasta :</label>
+                            <input id="cboFechaHastaVentEmpDet" type="date" value="<?php echo date("Y-m-d"); ?>"  maxlength="50" class="form-control" name="cboFechaHastaVentEmpDet" required="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <span class="font-weight-bold h4">Total Bs.</span><span id="total" class="h4">0.00</span>
                     </div>
                 </div>
             </div>
